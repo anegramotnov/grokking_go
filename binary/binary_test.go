@@ -7,9 +7,10 @@ import (
 )
 
 func TestBinarySearch(t *testing.T) {
+    // TODO: Case Pattern! 
+    // TODO: search(1, {}), search(1, {1}), search(0, {1})
     even_arr := []int{1, 3, 5, 7, 9, 11}
     odd_arr := []int{1, 3, 5, 7, 9, 11, 13}
-    // odd_arr := []int{2, 4, 6, 8, 10, 12, 14}
 
     res, err := BinarySearch(even_arr, 3)
     assert.Equal(t, nil, err)
@@ -53,6 +54,9 @@ func TestBinarySearch(t *testing.T) {
     assert.Equal(t, 6, res)
 
     res, err = BinarySearch([]int{}, 1)
+    assert.NotEqual(t, nil, err)
+
+    res, err = BinarySearch(even_arr, -5)
     assert.NotEqual(t, nil, err)
 
     res, err = BinarySearch([]int{1}, 1)
